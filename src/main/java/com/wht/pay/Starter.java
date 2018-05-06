@@ -22,13 +22,13 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
  * 不过本文还是选择大家都熟悉的JSP来举例，因为使用JSP与默认支持的模版需要特殊处理，所以拿来举例更好。
  */
 @SpringBootApplication
-public class DemoApplication extends SpringBootServletInitializer {
+public class Starter extends SpringBootServletInitializer {
 	@Override
 	protected final SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		return application.sources(DemoApplication.class);
+		return application.sources(Starter.class);
 	}
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
+		SpringApplication.run(Starter.class, args);
 	}
 }
