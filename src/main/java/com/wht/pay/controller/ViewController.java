@@ -8,10 +8,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
- * 因为是返回页面，所以不能用@RestController返回json格式包含@ResponseBody）
+ * 因为是返回页面，所以不能用@RestController,因为Rest包含@ResponseBody返回json格式包含）
  */
 @Controller
-//@RequestMapping("/hello")
 public class ViewController {
 
     //从application中读取配置，如取不到默认值为hello jack
@@ -34,10 +33,16 @@ public class ViewController {
         return "hello";
     }
 
-    //不要@ResponseBody 就会根据配置返回字符串(json)或者页面
+    //不要@ResponseBody 就返回页面
     @RequestMapping("/hello3")
     public String home3(ModelMap map){
         map.put("name", name);
         return "hello";
+    }
+
+    @RequestMapping("/demo1")
+    public String demo1(ModelMap map){
+        map.put("name", name);
+        return "demo1";
     }
 }

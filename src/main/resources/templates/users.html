@@ -1,0 +1,28 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:c="http://www.w3.org/1999/XSL/Transform">
+<head>
+    <meta charset="UTF-8" />
+    <title>Test20</title>
+    <link th:href="@{bootstrap/css/bootstrap.min.css}" rel="stylesheet" />
+    <link th:href="@{bootstrap/css/bootstrap-theme.min.css}" rel="stylesheet" />
+</head>
+<body>
+<h1>用户列表 (c:forEach>标签，需要与el表达式联合使用)</h1>
+<span th:text="${users}"></span>
+
+<h2>var="每个变量名字"   items="要迭代的list"   varStatus="每个对象的状态"
+ begin="循环从哪儿开始"    end="循环到哪儿结束"    step="循环的步长"</h2>
+<c:forEach var="user" items="${users}">
+    <c:output>${user.id}</c:output>
+</c:forEach>
+
+<h3 th:each="user : ${users}">
+    <a th:href="@{'/user/getUser?id='+${user.id}}" th:text="${user.userName}"></a>
+
+</h3>
+</ul>
+</li>
+</c:if>
+</c:forEach>
+
+</body>
+</html>
