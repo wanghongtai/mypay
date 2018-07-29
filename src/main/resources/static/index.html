@@ -1,11 +1,67 @@
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <title>Test20</title>
-    <link th:href="@{bootstrap/css/bootstrap.min.css}" rel="stylesheet" />
-    <link th:href="@{bootstrap/css/bootstrap-theme.min.css}" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../layui/css/layui.css">
+    <script src="../../layui/layui.all.js"></script>
+    <style type="text/css">
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            width: 100%;
+            height: 100%;
+            padding: 2px;
+            border: solid 1px blue;
+        }
+
+        #head {
+            display: block;
+            border: solid 1px red;
+            padding: 2px;
+            height: 20%;
+            width: 99%;
+        }
+
+        .div_layout_left {
+            display: inline-block;
+            border: solid 1px red;
+            width: 30%;
+            height: 79%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .div_layout_right {
+            display: inline-block;
+            border: solid 1px red;
+            width: 69%;
+            height: 79%;
+            margin: 0;
+            padding: 0;
+        }
+
+
+    </style>
 </head>
 <body>
 <h1>这个是 spring static目录下 index页面</h1> <br>
+<div id="container">
+    <!--头部-->
+    <iframe id="head" src="page/head.html" scrolling="false">
+        <p>这是头部</p>
+    </iframe>
+    <iframe class="div_layout_left" src="page/menu.html" scrolling="true">
+        <p>这个是左边菜单</p>
+    </iframe>
+    <iframe name="content_right" id="content_right" class="div_layout_right" src="page/content_right.html" scrolling="true">
+        <p>这个是右边Tab</p>
+    </iframe>
+</div>
 </body>
 </html>

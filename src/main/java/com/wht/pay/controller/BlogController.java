@@ -21,6 +21,8 @@ public class BlogController {
   @RequestMapping("/getBlog")
   @ResponseBody
   public Blog toIndex(HttpServletRequest request, Model model){
+    //Test log
+    Integer.parseInt("");
     int userId = Integer.parseInt(request.getParameter("id"));
     Blog blog = blogService.getBlogById(userId);
     System.out.println(blog);

@@ -95,12 +95,12 @@
             <!--<artifactId>spring-boot-starter-aop</artifactId>-->
         <!--</dependency>-->
 
-        <!--打印日志用-->
-        <!--<dependency>-->
-        <!--<groupId>log4j</groupId>-->
-        <!--<artifactId>log4j</artifactId>-->
-        <!--<version>1.2.17</version>-->
-        <!--</dependency>-->
+        <!--TODO: 打印日志用， use spring-boot-starter-log4j2, instead of logback. need exclude log4j-->
+        <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-log4j2</artifactId>
+        <version>1.5.9.RELEASE</version>
+        </dependency>
 
 
         <!--测试用-->

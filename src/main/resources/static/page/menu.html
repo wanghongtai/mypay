@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../layui/css/layui.css">
+    <script src="../../layui/layui.all.js"></script>
+    <script src="../js/jquery-3.3.1.js"></script>
+</head>
+<body>
+
+<div class="div_layout_left">
+    <p>这个是左边菜单</p>
+
+    <form>
+        <input type="text" value="test"><span color="red">*</span>
+        <input type="button" value="run query" onclick="runQuery2();">
+    </form>
+    <div style="border: solid 1px red; height: 1000px;"></div>
+</div>
+
+
+<script>
+    function runQuery1() {
+        console.log(123);
+        //加载层
+        var index = layer.load(0, {shade: false}); //0代表加载的风格，支持0-2
+        console.log("menu-index:" + index);
+        setTimeout(function () {
+            layer.close(index);
+            //layer.closeAll('loading');
+        }, 3000);
+    }
+
+    var index;
+
+    function runQuery() {
+        var index = parent.layer.load(2, {
+            shade: [0.3, '#fff'],
+            shadeClose: true
+        });
+        setTimeout(function () {
+            parent.layer.close(index);
+            // layer.close(index);
+        }, 3000);
+    }
+    
+    function reloadContent_right() {
+        var index = parent.content_right.layer.load(2, {
+            shade: [0.3, '#fff'],
+            shadeClose: true
+        });
+        setTimeout(function () {
+            parent.document.getElementById("content_right").contentWindow.initTab1();
+            parent.content_right.layer.close(index);
+        }, 1000);
+    }
+
+    function runQuery2() {
+        parent.document.getElementById("content_right").contentWindow.location.reload(true);
+        $(parent.content_right.document).ready(function (e) {
+            var iframe = parent.document.getElementById("content_right");
+            if (iframe.attachEvent) {
+                iframe.attachEvent("onload", function () {
+                    //iframe加载完成后你需要进行的操作
+                    reloadContent_right();
+                });
+            } else {
+                iframe.onload = function () {
+                    //iframe加载完成后你需要进行的操作
+                    reloadContent_right();
+                };
+            }
+        });
+        console.log("parent.content_right.layer index:" + index);
+    }
+
+</script>
+</body>
+</html>

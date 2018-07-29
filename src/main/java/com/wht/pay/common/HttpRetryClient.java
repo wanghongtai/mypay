@@ -93,7 +93,7 @@ public class HttpRetryClient {
     public static void main(String[] args) throws ParseException, IOException {
         String url="http://php.weather.sina.com.cn/iframe/index/w_cl.php";
         Map<String, String> map = new HashMap<String, String>();
-        map.put("code", "js");
+        map.put("code", "static/js");
         map.put("day", "1");
         map.put("city", "上海");
         map.put("dfc", "1");
