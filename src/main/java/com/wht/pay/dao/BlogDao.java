@@ -10,4 +10,6 @@ import java.util.Map;
 public interface BlogDao {
   Blog getBlogById(Integer id);
   List<Blog> getBlogByPage(Map<String,Object> data);
+
+  Integer addBlog(Map<String,Object> data);
 }

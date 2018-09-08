@@ -58,7 +58,7 @@
 
     function runQuery2() {
         parent.document.getElementById("content_right").contentWindow.location.reload(true);
-        $(parent.content_right.document).ready(function (e) {
+        // $(parent.content_right.document).ready(function (e) {
             var iframe = parent.document.getElementById("content_right");
             if (iframe.attachEvent) {
                 iframe.attachEvent("onload", function () {
@@ -71,7 +71,7 @@
                     reloadContent_right();
                 };
             }
-        });
+        // });
         console.log("parent.content_right.layer index:" + index);
     }
 

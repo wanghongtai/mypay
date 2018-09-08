@@ -8,4 +8,6 @@ public interface BlogService {
 
   Blog getBlogById(Integer id);
   List<Blog> getBlogByPage(int start, int pageSize);
+
+  public Integer addBlog(Blog blog);
 }

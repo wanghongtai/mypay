@@ -20,4 +20,5 @@ public interface UserMapper {
 
     @Select("SELECT * FROM user limit #{start},#{pageSize}")
     List<User> getUserByPage(Map<String,Object> data);
+
 }

@@ -1,8 +1,6 @@
 package com.wht.pay.controller;
 
-import com.wht.pay.entity.Blog;
 import com.wht.pay.entity.User;
-import com.wht.pay.service.BlogService;
 import com.wht.pay.service.UserService;
 import com.wht.pay.utils.NumberUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +9,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 

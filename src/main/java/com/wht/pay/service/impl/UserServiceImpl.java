@@ -27,4 +27,5 @@ public class UserServiceImpl implements UserService {
     data.put("pageSize", pageSize);
     return userMapper.getUserByPage(data);
   }
+
 }
