@@ -69,7 +69,10 @@ mapper:
   mappers:  com.wht.pay.dao
   not-empty: false
   identity: MYSQL
-
+ContextAwareThreadExecutor:
+  corePoolSize: 50
+  maxPoolSize: 70
+  queueCapacity: 500
 #logging 使用定制的logback配置，则不需要配置在application.yml
 #debug: true
 #logging.path: output/logs
